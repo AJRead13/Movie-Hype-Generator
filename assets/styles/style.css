@@ -15,5 +15,19 @@
     font-family: 'Marvel', sans-serif 
 }
 #titleEl {
-    font-family: "Marvel", sans-serif;
+    font-family: 'Courier New', Courier, monospace;
+}
+/* .card {
+    background-color: var(--main-color);
+    border-style: ridge;
+    border-width: 4px;
+    border-color: var(--body-color);
+
+} */
+
+#display-movies-section {
+    background-color: var(--main-color);
+    border-style: ridge;
+    border-width: 4px;
+    border-color: var(--body-color);
 }
