@@ -1,6 +1,6 @@
 /*bulma css framework*/
 
-@import url('https://fonts.googleapis.com/css2?family=Marvel:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Marvel:ital,wght@0,400;0,700;1,400;1,700&display=swap'); */
 
 :root{
     --main-color: rgb(170, 5, 5);
@@ -12,22 +12,14 @@
     }
 
 *   {
-    font-family: 'Marvel', sans-serif 
+    font-family: 'Marvel', sans-serif;
+    font-weight: bold 700;
 }
-#titleEl {
-    font-family: 'Courier New', Courier, monospace;
-}
-/* .card {
+
+.column {
     background-color: var(--main-color);
     border-style: ridge;
     border-width: 4px;
     border-color: var(--body-color);
+} 
 
-} */
-
-#display-movies-section {
-    background-color: var(--main-color); 
-    border-style: ridge;
-    border-width: 4px;
-    border-color: var(--body-color);
-}
