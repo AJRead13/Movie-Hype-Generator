@@ -3,28 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=\, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
-    <link rel="stylesheet" src="assets/styles/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marvel:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" src="./assets/styles/style.css">
     <title>Movie Hype Generator</title>
 </head>
 
 <body>
     <header>
         <nav>
-            <form>
-                <input id="search-input" placeholder="Search Movie">
-                <button id="search-button" class="button is-primary" type="submit">Search</button>
+            <form id="searchBar">
+                <input id="search-input" placeholder="Search Movie" class="is-size-6">
+                <button id="search-button" class="button is-primary is-size-6" type="submit">Search</button>
             </form>
         </nav>
         <h1>Movie Hype Generator</h1>
     </header>
     <main>
         <!-- Cards of saved movies -->
-        <section>
-            <div class="card is-one-fifth">
-                <h1 class="card-header-title">Title</h1>
-                <p class="card-content">Description</p>
+        <section class="has-text-centered">
+            <div class="card is-one-fifth has-text-centered">
+                <h1 id="titleEl" class="py-6 card-header-title is-primary is-size-1 px-6 has-text-centered has-background-danger-dark has-text-warning">Title</h1>
+                <p class="card-content is-size-5 has-text-warning-dark">Description</p>
                 <figure class="card-image">
                     <img src="" alt="Placeholder Image">
                 </figure>

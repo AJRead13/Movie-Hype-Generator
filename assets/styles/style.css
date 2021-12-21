@@ -1,5 +1,7 @@
 /*bulma css framework*/
 
+@import url('https://fonts.googleapis.com/css2?family=Marvel:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 :root{
     --main-color: rgb(170, 5, 5);
     --hover-color: rgb(106, 12, 11);
@@ -9,3 +11,9 @@
     /* --box-radius: border-radius: 25px; */
     }
 
+*   {
+    font-family: 'Marvel', sans-serif 
+}
+#titleEl {
+    font-family: "Marvel", sans-serif;
+}
