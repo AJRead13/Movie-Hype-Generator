@@ -1,6 +1,5 @@
 /*bulma css framework*/
 
-/* @import url('https://fonts.googleapis.com/css2?family=Marvel:ital,wght@0,400;0,700;1,400;1,700&display=swap'); */
 
 :root{
     --main-color: rgb(170, 5, 5);
@@ -16,10 +15,36 @@
     font-weight: bold 700;
 }
 
+#bodyEl {
+    background-color: var(--hover-color);
+}
+
+.cardTitle{
+    font-size: 32px;
+    font-weight: bold 700;
+    
+}
 .column {
     background-color: var(--main-color);
     border-style: ridge;
     border-width: 4px;
     border-color: var(--body-color);
+    color: var(--text-color);
 } 
-
+#searchBar  {
+    background-color: var(--main-color);
+}
+#search-button  {
+    background-color: var(--box-color);
+    color: var(--hover-color);
+}
+#header {
+    background-color: var(--main-color);
+    border-style: ridge;
+    border-width: 5px;
+    border-color: var(--body-color);
+}
+.card:hover {
+    box-shadow: 5px, 5px, 5px, var(--hover-color);
+    cursor: pointer;
+}
