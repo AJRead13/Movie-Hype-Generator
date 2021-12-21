@@ -1,1 +1,11 @@
-/*bulma css framework
+/*bulma css framework*/
+
+:root{
+    --main-color: rgb(170, 5, 5);
+    --hover-color: rgb(106, 12, 11);
+    --body-color: rgb(185, 125, 16);
+    --box-color: rgb(251, 202, 3);
+    --text-color: rgb(103, 199, 235);
+    /* --box-radius: border-radius: 25px; */
+    }
+
