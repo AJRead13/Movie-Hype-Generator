@@ -19,20 +19,20 @@ getOmdbApi(apiURL);
 
 // Fetching from Marvel API
 
-var comicApiKey = "87a2a54f6a890d5ea11b4846f3ac4b6c5019ed2d";
-
-var comicApiURL = "http://comicvine.gamespot.com/api/volumes/?api_key="+ comicApiKey + "&format=json";
+var comicApiPublicKey = "b6086cc7ddad64bdcdc0d9681c40e48d";
+var comicApiPrivateKey = "171a555d8009414cf5e463747ef4a609ff79e0bd";
+var ts = new Date();
+var hashMD5 = CryptoJS.MD5(ts + comicApiPrivateKey + comicApiPublicKey).toString();
+var comicApiURL = "https://gateway.marvel.com/v1/public/characters?ts="+ts+"&orderBy=name&limit=10&apikey="+comicApiPublicKey+"&hash="+hashMD5;
 
 function getComicApi(apiURL){
   fetch(apiURL)
     .then(function(response){
       if(!response.ok){
-        console.log(response);
       }
       return response.json();
     })
     .then(function (data){
-      console.log(data);
     });
     
 };
