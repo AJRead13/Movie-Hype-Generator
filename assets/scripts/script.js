@@ -49,6 +49,13 @@ searchFormEl.addEventListener("submit", getSearchInput);
 
 
 
+
+
+
+
+
+
+
 var currentDay = document.querySelector("#currentDay");
 
 var dateTime = function () {
@@ -56,7 +63,6 @@ var dateTime = function () {
   // currentDay.textContent = today;
 };
 setInterval(dateTime, 1000);
-
 // Fetching from Marvel API
 
 
