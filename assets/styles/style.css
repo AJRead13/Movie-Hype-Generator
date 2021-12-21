@@ -19,6 +19,10 @@
     background-color: var(--hover-color);
 }
 
+#titleEl    {
+    color: var(--text-color);
+    text-shadow: 1 1 5px rgb(221, 245, 253);
+}
 .cardTitle{
     font-size: 32px;
     font-weight: bold 700;
@@ -30,6 +34,7 @@
     border-width: 4px;
     border-color: var(--body-color);
     color: var(--text-color);
+    box-shadow: 5px, 5px, 5px, rgb(103, 199, 235);
 } 
 #searchBar  {
     background-color: var(--main-color);
@@ -44,7 +49,7 @@
     border-width: 5px;
     border-color: var(--body-color);
 }
-.card:hover {
-    box-shadow: 5px, 5px, 5px, var(--hover-color);
+#movieCard:hover {
+    box-shadow: 5px, 5px, 5px, rgb(103, 199, 235);
     cursor: pointer;
 }
