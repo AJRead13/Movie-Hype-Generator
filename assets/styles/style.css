@@ -1,0 +1,33 @@
+/*bulma css framework*/
+
+@import url('https://fonts.googleapis.com/css2?family=Marvel:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root{
+    --main-color: rgb(170, 5, 5);
+    --hover-color: rgb(106, 12, 11);
+    --body-color: rgb(185, 125, 16);
+    --box-color: rgb(251, 202, 3);
+    --text-color: rgb(103, 199, 235);
+    /* --box-radius: border-radius: 25px; */
+    }
+
+*   {
+    font-family: 'Marvel', sans-serif 
+}
+#titleEl {
+    font-family: 'Courier New', Courier, monospace;
+}
+/* .card {
+    background-color: var(--main-color);
+    border-style: ridge;
+    border-width: 4px;
+    border-color: var(--body-color);
+
+} */
+
+#display-movies-section {
+    background-color: var(--main-color);
+    border-style: ridge;
+    border-width: 4px;
+    border-color: var(--body-color);
+}
