@@ -17,7 +17,6 @@ function getOmdbApi(apiURL){
 
 getOmdbApi(apiURL);
 
-<<<<<<< HEAD
 
 
 
@@ -33,7 +32,7 @@ var dateTime = function () {
   currentDay.textConent = today;
 };
 setInterval(dateTime, 1000);
-=======
+
 // Fetching from Marvel API
 
 var comicApiPublicKey = "b6086cc7ddad64bdcdc0d9681c40e48d";
@@ -55,4 +54,3 @@ function getComicApi(apiURL){
 };
 
 getComicApi(comicApiURL);
->>>>>>> 76d183fa0b8cadd97b367f1a07ab135bb84eece4

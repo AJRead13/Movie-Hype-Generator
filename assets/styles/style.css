@@ -26,7 +26,7 @@
 } */
 
 #display-movies-section {
-    background-color: var(--main-color);
+    background-color: var(--main-color); 
     border-style: ridge;
     border-width: 4px;
     border-color: var(--body-color);
