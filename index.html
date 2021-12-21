@@ -4,29 +4,95 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=\, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylsheet" href="./assets/styles/style.css">
     <title>Movie Hype Generator</title>
 </head>
 
 <body>
-    <header>
-        <nav>
-            <form>
-                <input id="search-input" placeholder="Search Movie">
-                <button id="search-button" class="button is-primary" type="submit">Search</button>
-            </form>
+    <header class="mb-6 py-6 has-background-link">
+        <nav class="column navbar is-fixed-top is-success m-2" style="width: 275px;">
+            <div class="navbar-menu">
+                <form class="navbar-start">
+                    <input id="search-input" placeholder="Search Movie">
+                    <button id="search-button" class="button is-info mx-2" type="submit">Search</button>
+                </form>
+            </div>
         </nav>
-        <h1>Movie Hype Generator</h1>
+        <h1 class="has-text-centered title is-1">Movie Hype Generator</h1>
     </header>
     <main>
-        <!-- Cards of saved movies -->
-        <section>
-            <div class="card is-one-fifth">
-                <h1 class="card-header-title">Title</h1>
-                <p class="card-content">Description</p>
+        <!-- Template cards of saved movies, will be javascript generated from localstorage -->
+        <section id="display-movies-section" class="columns mx-3 is-multiline">
+            <div class="column card m-2 has-background-info" style="min-width: 300px;">
+                <h1 class="has-text-centered title is-1">Title</h1>
                 <figure class="card-image">
                     <img src="" alt="Placeholder Image">
                 </figure>
+                <p class="card-content">Description</p>
+            </div>
+            <div class="column card m-2 has-background-info" style="min-width: 300px;">
+                <h1 class="has-text-centered title is-1">Title</h1>
+                <figure class="card-image">
+                    <img src="" alt="Placeholder Image">
+                </figure>
+                <p class="card-content">Description</p>
+            </div>
+            <div class="column card m-2 has-background-info" style="min-width: 300px;">
+                <h1 class="has-text-centered title is-1">Title</h1>
+                <figure class="card-image">
+                    <img src="" alt="Placeholder Image">
+                </figure>
+                <p class="card-content">Description</p>
+            </div>
+            <div class="column card m-2 has-background-info" style="min-width: 300px;">
+                <h1 class="has-text-centered title is-1">Title</h1>
+                <figure class="card-image">
+                    <img src="" alt="Placeholder Image">
+                </figure>
+                <p class="card-content">Description</p>
+            </div>
+            <div class="column card m-2 has-background-info" style="min-width: 300px;">
+                <h1 class="has-text-centered title is-1">Title</h1>
+                <figure class="card-image">
+                    <img src="" alt="Placeholder Image">
+                </figure>
+                <p class="card-content">Description</p>
+            </div>
+            <div class="column card m-2 has-background-info" style="min-width: 300px;">
+                <h1 class="has-text-centered title is-1">Title</h1>
+                <figure class="card-image">
+                    <img src="" alt="Placeholder Image">
+                </figure>
+                <p class="card-content">Description</p>
+            </div>
+            <div class="column card m-2 has-background-info" style="min-width: 300px;">
+                <h1 class="has-text-centered title is-1">Title</h1>
+                <figure class="card-image">
+                    <img src="" alt="Placeholder Image">
+                </figure>
+                <p class="card-content">Description</p>
+            </div>
+            <div class="column card m-2 has-background-info" style="min-width: 300px;">
+                <h1 class="has-text-centered title is-1">Title</h1>
+                <figure class="card-image">
+                    <img src="" alt="Placeholder Image">
+                </figure>
+                <p class="card-content">Description</p>
+            </div>
+            <div class="column card m-2 has-background-info" style="min-width: 300px;">
+                <h1 class="has-text-centered title is-1">Title</h1>
+                <figure class="card-image">
+                    <img src="" alt="Placeholder Image">
+                </figure>
+                <p class="card-content">Description</p>
+            </div>
+            <div class="column card m-2 has-background-info" style="min-width: 300px;">
+                <h1 class="has-text-centered title is-1">Title</h1>
+                <figure class="card-image">
+                    <img src="" alt="Placeholder Image">
+                </figure>
+                <p class="card-content">Description</p>
             </div>
         </section>
     </main>
@@ -34,14 +100,4 @@
     <script src="./assets/scripts/script.js"></script>
 </body>
 
-=======
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Movie Hype Generator</title>
-</head>
-<body>
-  <script src = "assets/scripts/script.js"></script>
-</body>
 </html>
