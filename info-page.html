@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marvel:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/styles/style.css">
     <title>Movie Info Page</title>
 </head>
@@ -14,10 +17,18 @@
             <a href="./index.html"><button class="button">Home Page</button></a>
         </nav>
     </header>
-    <main>
-        <section class="columns box" style="height: 100%;">
-            <section class="column">
-
+    <main class="columns" style="height: 100vh;">
+        <section id="information-card-full" class="column columns is-8 is-offset-2 is-multiline">
+            <section class="column is-full">
+                <h1 class="title is-1">Title</h1>
+                <p>Time until release</p>
+            </section>
+            <section class="column is-4">
+                <h2 class="title is-2">Information</h2>
+                <p>Description</p>
+            </section>
+            <section class="column is-8">
+                <h3 class="title is-3">Similar to what you searched</h3>
             </section>
         </section>
     </main>
