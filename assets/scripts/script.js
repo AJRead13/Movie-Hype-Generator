@@ -6,7 +6,8 @@ var ts = new Date();
 var hashMD5 = CryptoJS.MD5(ts + comicApiPrivateKey + comicApiPublicKey).toString();
 var comicApiURL = "https://gateway.marvel.com/v1/public/characters?ts="+ts+"&orderBy=name&limit=10&apikey="+comicApiPublicKey+"&hash="+hashMD5;
 // Creating selectors to capture search input
-
+var searchFormEl = document.getElementById("search-form");
+var searchInputEl = document.getElementById("search-input");
 
 
 // Fetching from the OMDB Api
@@ -35,9 +36,16 @@ function getComicApi(apiURL){
 getOmdbApi(apiURL);
 getComicApi(comicApiURL);
 
+// Capturing search input
+function getSearchInput(event){
+  event.preventDefault();
+  var inputVal = searchInputEl.value;
+  if(!inputVal){
+    return;
+  }
+}
 
-
-
+searchFormEl.addEventListener("submit", getSearchInput);
 
 
 
