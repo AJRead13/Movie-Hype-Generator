@@ -41,6 +41,7 @@
 
 #searchBar  {
     background-color: var(--main-color);
+    width: fit-content;
 }
 #search-button  {
     background-color: var(--box-color);
@@ -61,6 +62,14 @@
     /* box-shadow: -5px -5px 10px rgb(103, 199, 235); */
     cursor: pointer;
 } 
+
+/* Modal settings */
+.modal-content {
+    background-color: var(--main-color);
+    color: var(--text-color);
+    border: 5px ridge var(--body-color);
+    border-radius: 15px;
+}
 
 /* info-page */
 #infoBody   {
@@ -89,16 +98,16 @@
     box-shadow: 3px 3px 5px rgb(103, 199, 235);
 }
 
-#timeUntil  {
+#info-page-time  {
     font-size: 1.75rem;
 }
-#movieTitle {
+#info-page-title {
     color: var(--text-color);
 }
-#additionalInfo {
+#info-page-description-title {
     color: var(--text-color);
 }
-#similarTitles  {
+#info-page-similar-results  {
     color: var(--text-color);
 }
 /* Icon Classes for Movie, Show, Comic/Book */
@@ -119,4 +128,15 @@
     color:var(--box-color);
     font-size: 2rem;
     /* <i class="fas fa-book-open"></i> */
+}
+
+/* Modal */
+#modal-title    {
+    color: var(--text-color);
+}
+#cycle-left {
+    background-color: var(--box-color);
+}
+#cycle-right    {
+    background-color: var(--box-color);
 }
