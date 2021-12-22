@@ -13,11 +13,12 @@
 
 *   {
     font-family: 'Marvel', sans-serif;
-    font-weight: bold 700;
+    font-weight: 700;
 }
 
 #bodyEl {
     background-color: var(--hover-color);
+    min-height: 100vh;
 }
 
 #titleEl    {
@@ -67,6 +68,10 @@
 /* info-page */
 #infoBody   {
     background-color: var(--hover-color);
+    min-height: 100vh;
+}
+#infoMain   {
+    min-height: 100vh;
 }
 
 #homeButton {
