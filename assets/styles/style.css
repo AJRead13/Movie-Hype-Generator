@@ -38,10 +38,7 @@
     color: var(--text-color);
     /* box-shadow: 0px 0px 10px rgb(103, 199, 235); */
 } 
-/* .column:hover{
-    cursor:pointer;
-    box-shadow: 0px 0px 10px rgb(103, 199, 235);
-} */
+
 #searchBar  {
     background-color: var(--main-color);
     width: fit-content;
@@ -49,6 +46,9 @@
 #search-button  {
     background-color: var(--box-color);
     color: var(--hover-color);
+}
+#search-button:hover{
+    box-shadow: 3px 3px 5px var(--text-color);
 }
 #header {
     background-color: var(--main-color);
@@ -61,7 +61,7 @@
     font-size: 3rem;
 }
 .movie:hover {
-    box-shadow: 3px 3px 5px rgb(103, 199, 235);
+    box-shadow: 3px 3px 5px var(--text-color);
     /* box-shadow: -5px -5px 10px rgb(103, 199, 235); */
     cursor: pointer;
 } 
@@ -98,7 +98,20 @@
 
 #homeButton:hover{
     cursor: pointer;
-    box-shadow: 3px 3px 5px rgb(103, 199, 235);
+    box-shadow: 3px 3px 5px var(--text-color);
+}
+
+#info-page-time  {
+    font-size: 1.75rem;
+}
+#info-page-title {
+    color: var(--text-color);
+}
+#info-page-description-title {
+    color: var(--text-color);
+}
+#info-page-similar-results  {
+    color: var(--text-color);
 }
 /* Icon Classes for Movie, Show, Comic/Book */
 
@@ -118,4 +131,15 @@
     color:var(--box-color);
     font-size: 2rem;
     /* <i class="fas fa-book-open"></i> */
+}
+
+/* Modal */
+#modal-title    {
+    color: var(--text-color);
+}
+#cycle-left {
+    background-color: var(--box-color);
+}
+#cycle-right    {
+    background-color: var(--box-color);
 }
