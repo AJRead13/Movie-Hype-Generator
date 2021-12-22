@@ -136,12 +136,14 @@ setInterval(dateTime, 1000);
 
 // Modal display
 // show modal
-searchButtonEl.addEventListener('click', function (event) {
+function showModal(event){
   event.preventDefault();
   modalEl.classList.add('is-active');
-})
+}
+searchButtonEl.addEventListener('click', showModal);
 // close modal
-modalCloseBtnEl.addEventListener('click', function (event) {
+function closeModal(event){
   event.preventDefault();
   modalEl.classList.remove('is-active');
-});
+}
+modalCloseBtnEl.addEventListener('click', closeModal);
