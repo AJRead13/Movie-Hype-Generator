@@ -38,10 +38,7 @@
     color: var(--text-color);
     /* box-shadow: 0px 0px 10px rgb(103, 199, 235); */
 } 
-/* .column:hover{
-    cursor:pointer;
-    box-shadow: 0px 0px 10px rgb(103, 199, 235);
-} */
+
 #searchBar  {
     background-color: var(--main-color);
 }
@@ -90,6 +87,19 @@
 #homeButton:hover{
     cursor: pointer;
     box-shadow: 3px 3px 5px rgb(103, 199, 235);
+}
+
+#timeUntil  {
+    font-size: 1.75rem;
+}
+#movieTitle {
+    color: var(--text-color);
+}
+#additionalInfo {
+    color: var(--text-color);
+}
+#similarTitles  {
+    color: var(--text-color);
 }
 /* Icon Classes for Movie, Show, Comic/Book */
 
