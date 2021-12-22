@@ -60,3 +60,8 @@ setInterval(dateTime, 1000);
 // Fetching from Marvel API
 
 
+
+// Testing modal
+var modalEl = document.getElementById('modal');
+var searchButtonEl = document.getElementById('search-button');
+
