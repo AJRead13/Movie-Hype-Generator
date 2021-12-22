@@ -1,5 +1,5 @@
 var APIKey = "a2a12eb8"
-var apiURL = "http://www.omdbapi.com/?i=tt3896198&apikey="+ APIKey;
+
 var comicApiPublicKey = "b6086cc7ddad64bdcdc0d9681c40e48d";
 var comicApiPrivateKey = "171a555d8009414cf5e463747ef4a609ff79e0bd";
 var ts = new Date();
@@ -11,7 +11,8 @@ var searchInputEl = document.getElementById("search-input");
 
 
 // Fetching from the OMDB Api
-function getOmdbApi(apiURL){
+function getOmdbApi(title){
+  var apiURL = "http://www.omdbapi.com/?i=tt3896198&apikey="+ APIKey + "&t="+ title;
   fetch(apiURL)
     .then(function(response){
       if(!response.ok){
@@ -19,6 +20,7 @@ function getOmdbApi(apiURL){
       return response.json();
     })
     .then(function (data){
+      console.log(data);
     });
 };
 // Fetching Marvel Api
@@ -33,7 +35,7 @@ function getComicApi(apiURL){
     });
     
 };
-getOmdbApi(apiURL);
+// getOmdbApi(apiURL);
 getComicApi(comicApiURL);
 
 // Capturing search input
@@ -43,6 +45,7 @@ function getSearchInput(event){
   if(!inputVal){
     return;
   }
+  getOmdbApi(inputVal);
 }
 
 searchFormEl.addEventListener("submit", getSearchInput);
