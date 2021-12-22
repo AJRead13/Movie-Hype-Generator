@@ -12,6 +12,7 @@ var searchInputEl = document.getElementById("search-input");
 var modalEl = document.getElementById('modal'); // the whole modal
 var searchButtonEl = document.getElementById('search-button'); // the search button in the nav bar (check which click listener for this is commented out)
 var modalCloseBtnEl = document.getElementById('modal-close-btn'); // top right corner 'X' will close the modal
+var modalBackgroundEl = document.getElementById('modal-background'); // background of the modal (greyed out space)
 
 
 // Fetching from the OMDB Api
@@ -66,12 +67,29 @@ setInterval(dateTime, 1000);
 
 // Modal display
 // show modal
-searchButtonEl.addEventListener('click', function (event) {
+function showModal(event){
   event.preventDefault();
   modalEl.classList.add('is-active');
-})
+}
+searchButtonEl.addEventListener('click', showModal);
 // close modal
-modalCloseBtnEl.addEventListener('click', function (event) {
+function closeModal(event){
   event.preventDefault();
   modalEl.classList.remove('is-active');
-});
+}
+modalCloseBtnEl.addEventListener('click', closeModal);
+modalBackgroundEl.addEventListener('click', closeModal);
+
+// TODO generate data and put into modal
+// #modal-image
+// #modal-title
+// #modal-description
+
+// TODO generate data and put into info-page
+// #info-page-title
+// #info-page-time
+// #info-page-description-title
+// #info-page-description
+// #info-page-similar-results
+
+// TODO pull from localstorage the cards that display on the home page
