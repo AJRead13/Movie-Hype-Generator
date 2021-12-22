@@ -7,6 +7,7 @@
     --body-color: rgb(185, 125, 16);
     --box-color: rgb(251, 202, 3);
     --text-color: rgb(103, 199, 235);
+    --marvel: "Marvel", sans-serif;
     /* --box-radius: border-radius: 25px; */
     }
 
@@ -55,10 +56,52 @@
 }
 .reel   {
     color:var(--box-color);
-    font-size: 48px;
+    font-size: 3rem;
 }
 .movie:hover {
     box-shadow: 3px 3px 5px rgb(103, 199, 235);
     /* box-shadow: -5px -5px 10px rgb(103, 199, 235); */
     cursor: pointer;
 } 
+
+/* info-page */
+#infoBody   {
+    background-color: var(--hover-color);
+}
+
+#homeButton {
+    background-color: var(--box-color);
+    color: var(--hover-color);
+    font-weight: 700;
+    font-size: 1.2rem;
+    /* padding-right: 5px; */
+    text-align: center;
+    font-family: var(--marvel);
+    border-color: black;
+    border-style: solid;
+    border-width: 2px;
+}
+
+#homeButton:hover{
+    cursor: pointer;
+    box-shadow: 3px 3px 5px rgb(103, 199, 235);
+}
+/* Icon Classes for Movie, Show, Comic/Book */
+
+.tvIcon  {
+    color:var(--box-color);
+    font-size: 2rem;
+    /* <i class="fas fa-tv"></i> */
+}
+
+.movieIcon  {
+    color:var(--box-color);
+    font-size: 2rem;
+    /* <i class="fas fa-ticket-alt"></i> */
+}
+
+.comicIcon  {
+    color:var(--box-color);
+    font-size: 2rem;
+    /* <i class="fas fa-book-open"></i> */
+}
