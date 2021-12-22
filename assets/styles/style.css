@@ -47,6 +47,9 @@
     background-color: var(--box-color);
     color: var(--hover-color);
 }
+#search-button:hover{
+    box-shadow: 3px 3px 5px var(--text-color);
+}
 #header {
     background-color: var(--main-color);
     border-style: ridge;
@@ -58,7 +61,7 @@
     font-size: 3rem;
 }
 .movie:hover {
-    box-shadow: 3px 3px 5px rgb(103, 199, 235);
+    box-shadow: 3px 3px 5px var(--text-color);
     /* box-shadow: -5px -5px 10px rgb(103, 199, 235); */
     cursor: pointer;
 } 
@@ -95,7 +98,7 @@
 
 #homeButton:hover{
     cursor: pointer;
-    box-shadow: 3px 3px 5px rgb(103, 199, 235);
+    box-shadow: 3px 3px 5px var(--text-color);
 }
 
 #timeUntil  {
