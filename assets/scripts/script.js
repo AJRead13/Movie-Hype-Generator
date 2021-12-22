@@ -18,6 +18,13 @@ function getOmdbApi(apiURL){
 getOmdbApi(apiURL);
 
 
+
+
+
+
+
+
+
 var currentDay = document.querySelector("#currentDay");
 
 var dateTime = function () {
