@@ -16,6 +16,10 @@
     font-weight: 700;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 #bodyEl {
     background-color: var(--hover-color);
     min-height: 100vh;
