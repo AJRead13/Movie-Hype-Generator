@@ -93,7 +93,11 @@ function getSearchResults(data, title, year) {
     };
     idArr.push(movieInfo);
   }
-  iteratePage(title, year);
+  if(data.Search.length < 10){
+    displayPoster();
+  }else{
+    iteratePage(title, year);
+  }
 }
 function iteratePage(title, year) {
   p++;
@@ -166,6 +170,7 @@ lastBtn.addEventListener("click", function (event) {
 
 // Display movie info on modal
 function displayPoster() {
+  console.log(j);
   modPosterEl.style.maxHeight = "100%";
   modPosterEl.style.maxWidth = "auto";
   if(idArr[j].poster == "N/A"){
