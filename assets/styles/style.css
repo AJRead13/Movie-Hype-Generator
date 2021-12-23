@@ -115,16 +115,16 @@
     box-shadow: 3px 3px 5px var(--text-color);
 }
 
-#timeUntil  {
+#info-page-time  {
     font-size: 1.75rem;
 }
-#movieTitle {
+#info-page-title {
     color: var(--text-color);
 }
-#additionalInfo {
+#info-page-description-title {
     color: var(--text-color);
 }
-#similarTitles  {
+#info-page-similar-results  {
     color: var(--text-color);
 }
 /* Icon Classes for Movie, Show, Comic/Book */
@@ -146,3 +146,14 @@
     font-size: 2rem;
     /* <i class="fas fa-book-open"></i> */
 }
+/* Modal */
+#modal-title    {
+    color: var(--text-color);
+}
+#cycle-left {
+    background-color: var(--box-color);
+}
+#cycle-right    {
+    background-color: var(--box-color);
+}
+
