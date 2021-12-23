@@ -15,7 +15,7 @@ function displayInfo() {
 
     // generate url
     var apiURL =
-    "http://www.omdbapi.com/?i=tt3896198&apikey=" +
+    "https://www.omdbapi.com/?i=tt3896198&apikey=" +
     APIKey +
     "&t=" +
     title +
@@ -42,11 +42,8 @@ function displayInfo() {
                 // plot and description information
                 plotEl.innerHTML = "Plot: " + data.Plot;
                 writersEl.innerHTML = "Writers: " + data.Writer;
-                // TODO related content (fetching from 2nd AIP)
-
-                    // #info-page-similar-results
             }
           });
-
+    // TODO related content (fetching from 2nd AIP)
     // Marvel database search
 }
