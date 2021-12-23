@@ -6,12 +6,7 @@ var hashMD5 = CryptoJS.MD5(
   ts + comicApiPrivateKey + comicApiPublicKey
 ).toString();
 var comicApiURL =
-  "https://gateway.marvel.com/v1/public/comics?ts=" +
-  ts +
-  "&orderBy=name&limit=10&apikey=" +
-  comicApiPublicKey +
-  "&hash=" +
-  hashMD5;
+"https://gateway.marvel.com:443/v1/public/comics?"+"ts="+ts +"&format=comic&formatType=comic&noVariants=false&orderBy=title&limit=15&apikey=" + comicApiPublicKey + "&hash=" + hashMD5;
 // Creating selectors to capture search input
 var searchFormEl = document.getElementById("search-form");
 var searchInputEl = document.getElementById("search-input");
@@ -60,8 +55,8 @@ function getOmdbApi(title, year) {
     });
 }
 // Fetching Marvel Api
-function getComicApi(apiURL) {
-  fetch(apiURL)
+function getComicApi(comicURL) {
+  fetch(comicURL)
     .then(function (response) {
       if (!response.ok) {
       }
