@@ -15,32 +15,32 @@ function displayInfo() {
     "&plot=full";
 
     // fetch detailed data from imdbID
-    // fetch(apiURL)
-    //     .then(function (response) {
-    //         if (!response.ok) {
-    //           return;
-    //         }
-    //         // console.log(response);
-    //         return response.json();
-    //       })
-    //       .then(function (data) {
-    //         console.log(data);
-    //         if (data.Response == "True") {
-    //             // display data in relevant fields
+    fetch(apiURL)
+        .then(function (response) {
+            if (!response.ok) {
+              return;
+            }
+            // console.log(response);
+            return response.json();
+          })
+          .then(function (data) {
+            console.log(data);
+            if (data.Response == "True") {
+                // display data in relevant fields
 
-    //             // Title and time until release
+                    // Title and time until release
 
-    //             // #info-page-title
-    //             // #info-page-time
+                        // #info-page-title
+                        // #info-page-time
 
-    //             // Description
+                    // Description
 
-    //             // #info-page-description-title
-    //             // #info-page-description
+                        // #info-page-description-title
+                        // #info-page-description
 
-    //             // related content (fetching from 2nd AIP)
+                    // related content (fetching from 2nd AIP)
 
-    //             // #info-page-similar-results
-    //         }
-    //       });
+                        // #info-page-similar-results
+            }
+          });
 }
