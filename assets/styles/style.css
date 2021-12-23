@@ -25,7 +25,10 @@ html{
 
 #titleEl    {
     color: var(--text-color);
-    text-shadow: 1 1 5px rgb(221, 245, 253);
+    -webkit-animation: glow 2s ease-in-out infinite alternate;
+    -moz-animation: glow 2s ease-in-out infinite alternate;
+    animation: glow 2s ease-in-out infinite alternate;
+
 }
 .cardTitle{
     font-size: 32px;
@@ -67,7 +70,7 @@ html{
     color:var(--box-color);
     font-size: 3rem;
     transition: 1s linear;
-    -webkit-animation: colorchange 10s infinite;
+    -webkit-animation: colorchange 5s infinite;
 }
 .reel:hover  {
     color: var(--text-color);
@@ -104,7 +107,6 @@ html{
 #infoMain   {
     min-height: 100vh;
 }
-
 #homeButton {
     background-color: var(--box-color);
     color: var(--hover-color);
@@ -118,16 +120,17 @@ html{
     border-width: 2px;
     transition: 1s linear;
 }
-
 #homeButton:hover{
     cursor: pointer;
     box-shadow: 3px 3px 5px var(--text-color);
 }
-
+.title  {
+    color: var(--text-color);
+}
 #info-page-time  {
     font-size: 1.75rem;
 }
-#info-page-title {
+#title {
     color: var(--text-color);
 }
 #info-page-description-title {
@@ -136,21 +139,17 @@ html{
 #info-page-similar-results  {
     color: var(--text-color);
 }
-
-
 /* Icon Classes for Movie, Show, Comic/Book */
 .tvIcon  {
     color:var(--box-color);
     font-size: 2rem;
     /* <i class="fas fa-tv"></i> */
 }
-
 .movieIcon  {
     color:var(--box-color);
     font-size: 2rem;
     /* <i class="fas fa-ticket-alt"></i> */
 }
-
 .comicIcon  {
     color:var(--box-color);
     font-size: 2rem;
@@ -166,7 +165,6 @@ html{
 #cycle-right    {
     background-color: var(--box-color);
 }
-
 /* keyframes */
 @-webkit-keyframes colorchange  {
     0%  {
@@ -180,5 +178,13 @@ html{
     }
     100%    {
         color:var(--box-color)
+    }
+}
+@-webkit-keyframes glow {
+    framework{
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    }
+    to  {
+        text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
     }
 }
