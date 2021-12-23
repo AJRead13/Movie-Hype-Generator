@@ -54,6 +54,7 @@ function getOmdbApi(title, year) {
     })
     .then(function (data) {
       if (data.Response == "True") {
+        // console.log(data);
         getSearchResults(data, title, year);
       }
     });
@@ -121,7 +122,7 @@ function iteratePage(title, year) {
       return response.json();
     })
     .then(function (data) {
-      console.log(data.Search);
+      // console.log(data.Search);
       if (data.Response == "True") {
         for (let i = 0; i < data.Search.length; i++) {
           var movieInfo = {
@@ -176,7 +177,7 @@ lastBtn.addEventListener("click", function (event) {
 
 // Display movie info on modal
 function displayPoster() {
-  console.log(j);
+  // console.log(j);
   modPosterEl.style.maxHeight = "100%";
   modPosterEl.style.maxWidth = "auto";
   if (idArr[j].poster == "N/A") {
@@ -205,10 +206,10 @@ setInterval(dateTime, 1000);
 var releaseDay = "";
 var releaseCount = document.querySelector(".card-content");
 var timeToRelease = function () {
-  var timeLeft = moment.to(releaseDay)
+  var timeLeft = moment.to(releaseDay);
   releaseCount.innerHTML(timeLeft);
 };
-setInterval(timeToRelease);
+// setInterval(timeToRelease, 1000);
 // dd mm yyyy
 
 // Modal display
@@ -217,18 +218,28 @@ function showModal() {
   modalEl.classList.add("is-active");
 }
 // close modal
-function closeModal(event) {
-  event.preventDefault();
-  modalEl.classList.remove("is-active");
+function closeModal(event){
+  modalEl.classList.remove('is-active');
 }
 modalCloseBtnEl.addEventListener("click", closeModal);
 modalBackgroundEl.addEventListener("click", closeModal);
 
-// TODO generate data and put into info-page
-// #info-page-title
-// #info-page-time
-// #info-page-description-title
-// #info-page-description
-// #info-page-similar-results
+// TODO load detailed data to info-page
+// testing
+modPosterEl.addEventListener('click', function (event) {
+  event.preventDefault();
+  var selectedMovie = event.target;
+  // get imdbID of the currently displayed movie (maybe a 'more info' button that has a value of the id)
+  var title = modTitleEl.innerHTML; // test value
+  var date = idArr[j].year;// year movie released
+
+  closeModal();
+  displayDetailedInfoPage(title, date);
+})
+// call this function when the user clicks on a specific movie in the modal
+function displayDetailedInfoPage(title, year) {
+  // go to info_page
+  window.location.assign('./info-page.html?q=' + title + '&y=' + year);
+}
 
 // TODO pull from localstorage the cards that display on the home page
