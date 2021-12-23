@@ -25,10 +25,6 @@ var searchButtonEl = document.getElementById('search-button'); // the search but
 var modalCloseBtnEl = document.getElementById('modal-close-btn'); // top right corner 'X' will close the modal
 var modalBackgroundEl = document.getElementById('modal-background'); // background of the modal (greyed out space)
 
-
-var yearInputEl = document.getElementById("year-input");
-var p = 1;
-var idArr = [];
 // Fetching from the OMDB Api
 function getOmdbApi(title, year) {
   var apiURL =
@@ -175,6 +171,4 @@ modalBackgroundEl.addEventListener('click', closeModal);
 // #info-page-similar-results
 
 // TODO pull from localstorage the cards that display on the home page
-
-
 
