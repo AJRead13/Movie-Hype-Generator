@@ -90,12 +90,14 @@ function getSearchResults(data, title, year) {
       imdb: data.Search[i].imdbID,
       title: data.Search[i].Title,
       poster: data.Search[i].Poster,
+      type: data.Search[i].Type,
+      year: data.Search[i].Year,
     };
     idArr.push(movieInfo);
   }
-  if(data.Search.length < 10){
+  if (data.Search.length < 10) {
     displayPoster();
-  }else{
+  } else {
     iteratePage(title, year);
   }
 }
@@ -119,17 +121,19 @@ function iteratePage(title, year) {
       return response.json();
     })
     .then(function (data) {
+      console.log(data.Search);
       if (data.Response == "True") {
         for (let i = 0; i < data.Search.length; i++) {
           var movieInfo = {
             imdb: data.Search[i].imdbID,
             title: data.Search[i].Title,
             poster: data.Search[i].Poster,
+            type: data.Search[i].Type,
+            year: data.Search[i].Year,
           };
           idArr.push(movieInfo);
         }
         displayPoster();
-        
       }
     });
 }
@@ -143,12 +147,13 @@ nextBtn.addEventListener("click", function (event) {
   modPosterEl.dataset.slide = j;
   modTitleEl.dataset.slide = j;
   modDescriptionEl.dataset.slide = j;
-  if(idArr[j].poster == "N/A"){
+  if (idArr[j].poster == "N/A") {
     modPosterEl.src = "assets/images/placeholder-image.png";
-  }else{
+  } else {
     modPosterEl.src = idArr[j].poster;
   }
   modTitleEl.innerHTML = idArr[j].title;
+  modDescriptionEl.innerHTML = "Year: " + idArr[j].year + "<br/>Format: " + idArr[j].type;
 });
 
 lastBtn.addEventListener("click", function (event) {
@@ -160,12 +165,13 @@ lastBtn.addEventListener("click", function (event) {
   modPosterEl.dataset.slide = j;
   modTitleEl.dataset.slide = j;
   modDescriptionEl.dataset.slide = j;
-  if(idArr[j].poster == "N/A"){
+  if (idArr[j].poster == "N/A") {
     modPosterEl.src = "assets/images/placeholder-image.png";
-  }else{
+  } else {
     modPosterEl.src = idArr[j].poster;
   }
   modTitleEl.innerHTML = idArr[j].title;
+  modDescriptionEl.innerHTML = "Year: " + idArr[j].year + "<br/>Format: " + idArr[j].type;
 });
 
 // Display movie info on modal
@@ -173,12 +179,13 @@ function displayPoster() {
   console.log(j);
   modPosterEl.style.maxHeight = "100%";
   modPosterEl.style.maxWidth = "auto";
-  if(idArr[j].poster == "N/A"){
+  if (idArr[j].poster == "N/A") {
     modPosterEl.src = "assets/images/placeholder-image.png";
-  }else{
+  } else {
     modPosterEl.src = idArr[j].poster;
   }
   modTitleEl.innerHTML = idArr[j].title;
+  modDescriptionEl.innerHTML = "Year: " + idArr[j].year + "<br/>Format: " + idArr[j].type;
 }
 
 searchFormEl.addEventListener("submit", function (event) {
