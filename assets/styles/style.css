@@ -146,7 +146,6 @@
     font-size: 2rem;
     /* <i class="fas fa-book-open"></i> */
 }
-
 /* Modal */
 #modal-title    {
     color: var(--text-color);
@@ -157,3 +156,4 @@
 #cycle-right    {
     background-color: var(--box-color);
 }
+
