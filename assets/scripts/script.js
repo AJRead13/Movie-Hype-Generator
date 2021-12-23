@@ -34,7 +34,7 @@ var lastBtn = document.getElementById("cycle-left");
 // Fetching from the OMDB Api
 function getOmdbApi(title, year) {
   var apiURL =
-    "http://www.omdbapi.com/?i=tt3896198&apikey=" +
+    "https://www.omdbapi.com/?i=tt3896198&apikey=" +
     APIKey +
     "&s=" +
     title +
@@ -105,7 +105,7 @@ function getSearchResults(data, title, year) {
 function iteratePage(title, year) {
   p++;
   var pageApiURL =
-    "http://www.omdbapi.com/?i=tt3896198&apikey=" +
+    "https://www.omdbapi.com/?i=tt3896198&apikey=" +
     APIKey +
     "&s=" +
     title +
