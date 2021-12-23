@@ -69,6 +69,11 @@
 .reel:hover  {
     color: var(--text-color);
 }
+#currentDay {
+    color: var(--box-color);
+    text-align: center;
+    font-size: 1.4rem;
+}
 
 .column:hover   {
     border-color: var(--text-color);

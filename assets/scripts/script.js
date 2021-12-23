@@ -132,7 +132,7 @@ var currentDay = document.querySelector("#currentDay");
 
 var dateTime = function () {
   var today = moment().format("MMM Do YYYY");
-  // currentDay.textContent = today;
+  currentDay.textContent = today;
 };
 setInterval(dateTime, 1000);
 // Fetching from Marvel API
