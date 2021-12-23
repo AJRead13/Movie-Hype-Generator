@@ -206,10 +206,10 @@ setInterval(dateTime, 1000);
 var releaseDay = "";
 var releaseCount = document.querySelector(".card-content");
 var timeToRelease = function () {
-  var timeLeft = moment.to(releaseDay)
+  var timeLeft = moment.to(releaseDay);
   releaseCount.innerHTML(timeLeft);
 };
-setInterval(timeToRelease);
+// setInterval(timeToRelease, 1000);
 // dd mm yyyy
 
 // Modal display
