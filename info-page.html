@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./assets/styles/style.css">
     <title>Movie Info Page</title>
 </head>
-<body id="bodyEl" style="height: 100vh;">
+<body id="bodyEl">
     <header class="">
         <nav class="column navbar is-fixed-top m-2" style="width: fit-content;">
             <a href="./index.html"><button class="button">Home Page</button></a>
@@ -20,15 +20,15 @@
     <main class="columns">
         <section id="information-card-full" class="column columns is-8 is-offset-2 is-multiline">
             <section class="column is-full my-3">
-                <h1 id=movieTitle class="title is-1"><span><i class="reel fas fa-film"></i></span>  Title </h1>
-                <p id="timeUntil">Time until release: <span id=releaseTimer></span></p>
+                <h1 id="info-page-title" class="title is-1"><span><i class="reel fas fa-film"></i></span>  Title </h1>
+                <p id="info-page-time">Time until release</p>
             </section>
             <section class="column is-4 mr-3">
-                <h2 id="additionalInfo" class="title is-2">Information</h2>
-                <p id="movieDescription">Description</p>
+                <h2  id="info-page-description-title"class="title is-2">Information</h2>
+                <p id="info-page-description">Description</p>
             </section>
             <section class="column">
-                <h3 id="similarTitles" class="title is-3">Similar to what you searched</h3>
+                <h3  id="info-page-similar-results"class="title is-3">Similar to what you searched</h3>
             </section>
         </section>
     </main>

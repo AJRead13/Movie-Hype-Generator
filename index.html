@@ -13,9 +13,9 @@
     <title>Movie Hype Generator</title>
   </head>
 
-<body id="bodyEl" class="is-fullheight" style="height: 100vh;">
+<body id="bodyEl" class="is-fullheight">
     <header id="header" class="mb-6 py-6">
-        <nav id="searchBar" class="column navbar m-2" style="width: fit-content;">
+        <nav id="searchBar" class="column navbar m-2">
             <div class="navMenu">
                 <form id="search-form" class="navbar-start">
                     <input id="search-input" placeholder="Search Movie">
@@ -103,12 +103,12 @@
         </section>
         <!-- Modal -->
         <section id="modal" class="modal">
-            <div class="modal-background"></div>
-            <div class="modal-content p-3 px-6" style="background-color: white;">
+            <div id="modal-background" class="modal-background"></div>
+            <div class="modal-content p-3 px-6">
                 <!-- put the data from the search -->
-                <img href="" alt="Placeholder Image">
-                <h1>Title</h1>
-                <p>Description</p>
+                <img id="modal-image" href="" alt="Placeholder Image">
+                <h1 id="modal-title" class="title is-3">Title</h1>
+                <p id="modal-description">Description</p>
                 <button id="cycle-left" style="position: absolute; left: 2px; top: 50%;">Left</button>
                 <button id="cycle-right" style="position: absolute; right: 2px; top: 50%;">Right</button>
             </div>
