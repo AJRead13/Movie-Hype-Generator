@@ -25,6 +25,9 @@ var modalEl = document.getElementById('modal'); // the whole modal
 var searchButtonEl = document.getElementById('search-button'); // the search button in the nav bar (check which click listener for this is commented out)
 var modalCloseBtnEl = document.getElementById('modal-close-btn'); // top right corner 'X' will close the modal
 var modalBackgroundEl = document.getElementById('modal-background'); // background of the modal (greyed out space)
+var modPosterEl = document.getElementById("modal-image");
+var modTitleEl = document.getElementById("modal-title");
+var modDescriptionEl = document.getElementById("modal-description");
 
 
 // Fetching from the OMDB Api
@@ -83,7 +86,12 @@ function getSearchResults(data, title, year) {
     return;
   }
   for (let i = 0; i < data.Search.length; i++) {
-    idArr.push(data.Search[i].imdbID);
+    var movieInfo = {
+      "imdb": data.Search[i].imdbID,
+      "title": data.Search[i].Title,
+      "poster": data.Search[i].Poster
+    }
+    idArr.push(movieInfo);
   }
   iteratePage(title, year);
 }
@@ -109,20 +117,33 @@ function iteratePage(title, year) {
     .then(function (data) {
       if (data.Response == "True") {
         for (let i = 0; i < data.Search.length; i++) {
-          idArr.push(data.Search[i].imdbID);
+          var movieInfo = {
+            "imdb": data.Search[i].imdbID,
+            "title": data.Search[i].Title,
+            "poster": data.Search[i].Poster
+          }
+          idArr.push(movieInfo);
         }
         console.log(idArr);
+        displayPoster(idArr);
       }
     });
+}
+
+// Display movie info on modal
+function displayPoster(ids){
+
+  modPosterEl.href = "https://m.media-amazon.com/images/M/MV5BYTExZTdhY2ItNGQ1YS00NjJlLWIxMjYtZTI1MzNlMzY0OTk4XkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_SX300.jpg";
+  for(let i=0; i<ids.length; i++){
+    
+    
+  }
 }
 
 searchFormEl.addEventListener("submit", function (event) {
   event.preventDefault();
   showModal();
   getSearchInput();
-  if (idArr.length > 0) {
-    console.log(idArr);
-  }
 });
 
 //displaying date and time//
@@ -148,10 +169,6 @@ function closeModal(event){
 modalCloseBtnEl.addEventListener('click', closeModal);
 modalBackgroundEl.addEventListener('click', closeModal);
 
-// TODO generate data and put into modal
-// #modal-image
-// #modal-title
-// #modal-description
 
 // TODO generate data and put into info-page
 // #info-page-title
