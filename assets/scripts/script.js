@@ -1,4 +1,4 @@
-var APIKey = "a5e84bc6";
+var APIKey = "a2a12eb8"
 
 var comicApiPublicKey = "b6086cc7ddad64bdcdc0d9681c40e48d";
 var comicApiPrivateKey = "171a555d8009414cf5e463747ef4a609ff79e0bd";
