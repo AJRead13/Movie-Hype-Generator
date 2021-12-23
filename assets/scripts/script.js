@@ -175,3 +175,6 @@ modalBackgroundEl.addEventListener('click', closeModal);
 // #info-page-similar-results
 
 // TODO pull from localstorage the cards that display on the home page
+
+
+
