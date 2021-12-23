@@ -1,4 +1,4 @@
-var APIKey = "a2a12eb8"
+var APIKey = "a5e84bc6";
 
 var comicApiPublicKey = "b6086cc7ddad64bdcdc0d9681c40e48d";
 var comicApiPrivateKey = "171a555d8009414cf5e463747ef4a609ff79e0bd";
@@ -26,6 +26,9 @@ var modalCloseBtnEl = document.getElementById('modal-close-btn'); // top right c
 var modalBackgroundEl = document.getElementById('modal-background'); // background of the modal (greyed out space)
 
 
+var yearInputEl = document.getElementById("year-input");
+var p = 1;
+var idArr = [];
 // Fetching from the OMDB Api
 function getOmdbApi(title, year) {
   var apiURL =
@@ -75,6 +78,15 @@ function getSearchInput() {
   }
   getOmdbApi(titleVal, yearVal);
 }
+
+// searchFormEl.addEventListener("submit", getSearchInput);
+
+
+
+
+
+
+
 
 // Getting top ten most recent/future search results
 function getSearchResults(data, title, year) {
