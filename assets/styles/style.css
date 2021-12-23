@@ -123,11 +123,13 @@ html{
     cursor: pointer;
     box-shadow: 3px 3px 5px var(--text-color);
 }
-
+.title  {
+    color: var(--text-color);
+}
 #info-page-time  {
     font-size: 1.75rem;
 }
-#info-page-title {
+#title {
     color: var(--text-color);
 }
 #info-page-description-title {

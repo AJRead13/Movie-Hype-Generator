@@ -16,7 +16,7 @@ No install required
 Open in browser.  https://ajread13.github.io/Movie-Hype-Generator/
 ## Screenshot
 ![screenshot start]() 
-![screenshot question]()
+![screenshot modal](assets/images/modalExample.png)
 ![screenshot initials]()
 ![screenshot QR-Code](assets/images/QRcode.png)
 ## Credits
