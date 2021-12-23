@@ -19,6 +19,12 @@ var searchInputEl = document.getElementById("search-input");
 var yearInputEl = document.getElementById("year-input");
 var p = 1;
 var idArr = [];
+// Modal Elements
+var modalEl = document.getElementById('modal'); // the whole modal
+var searchButtonEl = document.getElementById('search-button'); // the search button in the nav bar (check which click listener for this is commented out)
+var modalCloseBtnEl = document.getElementById('modal-close-btn'); // top right corner 'X' will close the modal
+
+
 // Fetching from the OMDB Api
 function getOmdbApi(title, year) {
   var apiURL =
@@ -128,8 +134,14 @@ setInterval(dateTime, 1000);
 // Fetching from Marvel API
 
 
-
-// Testing modal
-var modalEl = document.getElementById('modal');
-var searchButtonEl = document.getElementById('search-button');
-
+// Modal display
+// show modal
+searchButtonEl.addEventListener('click', function (event) {
+  event.preventDefault();
+  modalEl.classList.add('is-active');
+})
+// close modal
+modalCloseBtnEl.addEventListener('click', function (event) {
+  event.preventDefault();
+  modalEl.classList.remove('is-active');
+});
