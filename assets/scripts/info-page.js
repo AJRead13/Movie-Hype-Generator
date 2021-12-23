@@ -4,14 +4,19 @@ displayInfo();
 function displayInfo() {
     // get info from query in url
     var queryString = document.location.search;
-    var imdbID = queryString.split('=')[1];
+    var title = queryString.split('=')[1].trim();
+    var year = queryString.split('=')[2].trim();
+    console.log(imdbID);
+    console.log(year);
 
     // generate url
     var apiURL =
     "http://www.omdbapi.com/?i=tt3896198&apikey=" +
     APIKey +
-    "&i=" +
-    imdbID +
+    "&t=" +
+    title +
+    "&y=" + 
+    year +
     "&plot=full";
 
     // fetch detailed data from imdbID

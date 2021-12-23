@@ -54,6 +54,7 @@ function getOmdbApi(title, year) {
     })
     .then(function (data) {
       if (data.Response == "True") {
+        console.log(data);
         getSearchResults(data, title, year);
       }
     });
@@ -209,21 +210,20 @@ modalBackgroundEl.addEventListener("click", closeModal);
 
 // TODO load detailed data to info-page
 // testing
-var modalImageEl = document.getElementById('modal-image');
-modalImageEl.addEventListener('click', function (event) {
+modPosterEl.addEventListener('click', function (event) {
   event.preventDefault();
   var selectedMovie = event.target;
   console.log(selectedMovie);
   // get imdbID of the currently displayed movie (maybe a 'more info' button that has a value of the id)
-  var movieID = 'test';
-
+  var title = "The Batman"; // test value
+  var date = "2022";// year movie released
   closeModal();
-  displayDetailedInfoPage(movieID);
+  displayDetailedInfoPage(title, date);
 })
 // call this function when the user clicks on a specific movie in the modal
-function displayDetailedInfoPage(imdbID) {
+function displayDetailedInfoPage(title, year) {
   // go to info_page
-  window.location.assign('./info-page.html?q=' + imdbID);
+  window.location.assign('./info-page.html?q=' + title + '&y=' + year);
 }
 
 // TODO pull from localstorage the cards that display on the home page
