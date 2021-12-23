@@ -1,4 +1,10 @@
 var APIKey = "a2a12eb8"
+var titleEl = document.getElementById('title');
+var timeEl = document.getElementById('release-time');
+var writersEl = document.getElementById('writers');
+var plotEl = document.getElementById('plot');
+var similarEl = document.getElementById('similar-results');
+
 displayInfo();
 // TODO generate data and put into info-page
 function displayInfo() {
@@ -6,8 +12,6 @@ function displayInfo() {
     var queryString = document.location.search;
     var title = queryString.split('=')[1].trim();
     var year = queryString.split('=')[2].trim();
-    console.log(imdbID);
-    console.log(year);
 
     // generate url
     var apiURL =
@@ -29,23 +33,20 @@ function displayInfo() {
             return response.json();
           })
           .then(function (data) {
-            console.log(data);
             if (data.Response == "True") {
-                // display data in relevant fields
+                // TODO display data in relevant fields
+                // Title
+                titleEl.innerHTML = data.Title;
+                // time until release //TODO calculate
+                timeEl.innerHTML = data.Released;
+                // plot and description information
+                plotEl.innerHTML = "Plot: " + data.Plot;
+                writersEl.innerHTML = "Writers: " + data.Writer;
+                // TODO related content (fetching from 2nd AIP)
 
-                    // Title and time until release
-
-                        // #info-page-title
-                        // #info-page-time
-
-                    // Description
-
-                        // #info-page-description-title
-                        // #info-page-description
-
-                    // related content (fetching from 2nd AIP)
-
-                        // #info-page-similar-results
+                    // #info-page-similar-results
             }
           });
+
+    // Marvel database search
 }
