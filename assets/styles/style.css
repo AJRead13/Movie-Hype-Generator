@@ -1,6 +1,4 @@
 /*bulma css framework*/
-
-
 :root{
     --main-color: rgb(170, 5, 5);
     --hover-color: rgb(106, 12, 11);
@@ -14,6 +12,10 @@
 *   {
     font-family: 'Marvel', sans-serif;
     font-weight: 700;
+}
+
+html{
+    scroll-behavior: smooth;
 }
 
 #bodyEl {
@@ -39,7 +41,7 @@
     transition: 1s linear;
     /* box-shadow: 0px 0px 10px rgb(103, 199, 235); */
 } 
-
+/* SearchBar and header Styling */
 #searchBar  {
     background-color: var(--main-color);
     width: fit-content;
@@ -69,7 +71,13 @@
 .reel:hover  {
     color: var(--text-color);
 }
+#currentDay {
+    color: var(--box-color);
+    text-align: center;
+    font-size: 1.4rem;
+}
 
+/* dashboard main styling */
 .column:hover   {
     border-color: var(--text-color);
 }
@@ -127,8 +135,9 @@
 #info-page-similar-results  {
     color: var(--text-color);
 }
-/* Icon Classes for Movie, Show, Comic/Book */
 
+
+/* Icon Classes for Movie, Show, Comic/Book */
 .tvIcon  {
     color:var(--box-color);
     font-size: 2rem;

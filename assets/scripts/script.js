@@ -125,11 +125,11 @@ searchFormEl.addEventListener("submit", function (event) {
   }
 });
 
+//displaying date and time//
 var currentDay = document.querySelector("#currentDay");
-
 var dateTime = function () {
-  var today = moment().format("MMM Do YYYY");
-  // currentDay.textContent = today;
+  var today = moment().format("MMM Do YYYY HH:mm a");
+  currentDay.textContent = today;
 };
 setInterval(dateTime, 1000);
 // Fetching from Marvel API
