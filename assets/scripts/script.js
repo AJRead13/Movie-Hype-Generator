@@ -121,6 +121,7 @@ function iteratePage(title, year) {
 
 searchFormEl.addEventListener("submit", function (event) {
   event.preventDefault();
+  showModal();
   console.log("We are here");
   getSearchInput();
   if (idArr.length > 0) {
@@ -140,11 +141,10 @@ setInterval(dateTime, 1000);
 
 // Modal display
 // show modal
-function showModal(event){
-  event.preventDefault();
+function showModal(){
   modalEl.classList.add('is-active');
 }
-searchButtonEl.addEventListener('click', showModal);
+// searchButtonEl.addEventListener('click', showModal);
 // close modal
 function closeModal(event){
   event.preventDefault();
