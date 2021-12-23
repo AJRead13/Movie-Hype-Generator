@@ -15,7 +15,7 @@ function displayInfo() {
 
     // generate url
     var apiURL =
-    "http://www.omdbapi.com/?i=tt3896198&apikey=" +
+    "https://www.omdbapi.com/?i=tt3896198&apikey=" +
     APIKey +
     "&t=" +
     title +
