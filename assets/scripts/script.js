@@ -133,7 +133,11 @@ function iteratePage(title, year) {
 // Display movie info on modal
 function displayPoster(ids){
 
-  modPosterEl.href = "https://m.media-amazon.com/images/M/MV5BYTExZTdhY2ItNGQ1YS00NjJlLWIxMjYtZTI1MzNlMzY0OTk4XkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_SX300.jpg";
+  modPosterEl.src = ids[0].poster;
+  modPosterEl.alt = ids[0].title + " poster image";
+  modPosterEl.style.maxHeight = "100%";
+  modPosterEl.style.maxWidth = "auto";
+  modTitleEl.innerHTML = ids[0].title;
   for(let i=0; i<ids.length; i++){
     
     
