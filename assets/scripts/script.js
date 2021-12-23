@@ -142,7 +142,6 @@ function showModal(){
 }
 // close modal
 function closeModal(event){
-  event.preventDefault();
   modalEl.classList.remove('is-active');
 }
 modalCloseBtnEl.addEventListener('click', closeModal);
@@ -153,13 +152,24 @@ modalBackgroundEl.addEventListener('click', closeModal);
 // #modal-title
 // #modal-description
 
-// TODO generate data and put into info-page
-// #info-page-title
-// #info-page-time
-// #info-page-description-title
-// #info-page-description
-// #info-page-similar-results
+// TODO load detailed data to info-page
+// testing
+var modalImageEl = document.getElementById('modal-image');
+modalImageEl.addEventListener('click', function (event) {
+  event.preventDefault();
+  var selectedMovie = event.target;
+  console.log(selectedMovie);
+  // get imdbID of the currently displayed movie (maybe a 'more info' button that has a value of the id)
+  var movieID = 'test';
 
+  closeModal();
+  displayDetailedInfoPage(movieID);
+})
+// call this function when the user clicks on a specific movie in the modal
+function displayDetailedInfoPage(imdbID) {
+  // go to info_page
+  window.location.assign('./info-page.html?q=' + imdbID);
+}
 
 // TODO pull from localstorage the cards that display on the home page
 
