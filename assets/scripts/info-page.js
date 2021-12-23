@@ -26,23 +26,21 @@ function displayInfo() {
     //       .then(function (data) {
     //         console.log(data);
     //         if (data.Response == "True") {
-    //         //   getSearchResults(data, title, year);
+    //             // display data in relevant fields
+
+    //             // Title and time until release
+
+    //             // #info-page-title
+    //             // #info-page-time
+
+    //             // Description
+
+    //             // #info-page-description-title
+    //             // #info-page-description
+
+    //             // related content (fetching from 2nd AIP)
+
+    //             // #info-page-similar-results
     //         }
     //       });
-
-    // display data in relevant fields
-
-    // Title and time until release
-
-      // #info-page-title
-      // #info-page-time
-
-    // Description
-
-      // #info-page-description-title
-      // #info-page-description
-
-    // related content (fetching from 2nd AIP)
-
-      // #info-page-similar-results
 }
