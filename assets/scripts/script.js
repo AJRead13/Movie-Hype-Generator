@@ -6,7 +6,7 @@ var hashMD5 = CryptoJS.MD5(
   ts + comicApiPrivateKey + comicApiPublicKey
 ).toString();
 var comicApiURL =
-  "https://gateway.marvel.com/v1/public/characters?ts=" +
+  "https://gateway.marvel.com/v1/public/comics?ts=" +
   ts +
   "&orderBy=name&limit=10&apikey=" +
   comicApiPublicKey +
@@ -67,7 +67,9 @@ function getComicApi(apiURL) {
       }
       return response.json();
     })
-    .then(function (data) {});
+    .then(function (data) {
+      console.log(data);
+    });
 }
 getComicApi(comicApiURL);
 
@@ -201,13 +203,13 @@ var dateTime = function () {
 };
 setInterval(dateTime, 1000);
 
-var releaseDay = "";
-var releaseCount = document.querySelector(".card-content");
-var timeToRelease = function () {
-  var timeLeft = moment.to(releaseDay);
-  releaseCount.innerHTML(timeLeft);
-};
-// setInterval(timeToRelease, 1000);
+// var releaseDay = "";
+// var releaseCount = document.querySelector(".card-content");
+// var timeToRelease = function () {
+//   var timeLeft = moment.to(releaseDay)
+//   releaseCount.innerHTML(timeLeft);
+// };
+// setInterval(timeToRelease);
 // dd mm yyyy
 
 // Modal display
