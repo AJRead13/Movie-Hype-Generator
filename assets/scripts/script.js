@@ -122,7 +122,6 @@ function iteratePage(title, year) {
       return response.json();
     })
     .then(function (data) {
-      // console.log(data.Search);
       if (data.Response == "True") {
         for (let i = 0; i < data.Search.length; i++) {
           var movieInfo = {
@@ -177,7 +176,6 @@ lastBtn.addEventListener("click", function (event) {
 
 // Display movie info on modal
 function displayPoster() {
-  // console.log(j);
   modPosterEl.style.maxHeight = "100%";
   modPosterEl.style.maxWidth = "auto";
   if (idArr[j].poster == "N/A") {
