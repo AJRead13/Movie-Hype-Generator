@@ -13,7 +13,7 @@
 ## Installation
 No install required
 ## Usage
-Open in browser.  
+Open in browser.  https://ajread13.github.io/Movie-Hype-Generator/
 ## Screenshot
 ![screenshot start]() 
 ![screenshot question]()
