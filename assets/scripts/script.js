@@ -1,12 +1,4 @@
 var APIKey = "a2a12eb8";
-var comicApiPublicKey = "b6086cc7ddad64bdcdc0d9681c40e48d";
-var comicApiPrivateKey = "171a555d8009414cf5e463747ef4a609ff79e0bd";
-var ts = new Date();
-var hashMD5 = CryptoJS.MD5(
-  ts + comicApiPrivateKey + comicApiPublicKey
-).toString();
-var comicApiURL =
-"https://gateway.marvel.com:443/v1/public/comics?"+"ts="+ts +"&format=comic&formatType=comic&noVariants=false&orderBy=title&limit=15&apikey=" + comicApiPublicKey + "&hash=" + hashMD5;
 // Creating selectors to capture search input
 var searchFormEl = document.getElementById("search-form");
 var searchInputEl = document.getElementById("search-input");
@@ -54,19 +46,6 @@ function getOmdbApi(title, year) {
       }
     });
 }
-// Fetching Marvel Api
-function getComicApi(comicURL) {
-  fetch(comicURL)
-    .then(function (response) {
-      if (!response.ok) {
-      }
-      return response.json();
-    })
-    .then(function (data) {
-      console.log(data);
-    });
-}
-getComicApi(comicApiURL);
 
 // Capturing search input
 function getSearchInput() {
@@ -150,7 +129,8 @@ nextBtn.addEventListener("click", function (event) {
     modPosterEl.src = idArr[j].poster;
   }
   modTitleEl.innerHTML = idArr[j].title;
-  modDescriptionEl.innerHTML = "Year: " + idArr[j].year + "<br/>Format: " + idArr[j].type;
+  modDescriptionEl.innerHTML =
+    "Year: " + idArr[j].year + "<br/>Format: " + idArr[j].type;
 });
 
 lastBtn.addEventListener("click", function (event) {
@@ -168,7 +148,8 @@ lastBtn.addEventListener("click", function (event) {
     modPosterEl.src = idArr[j].poster;
   }
   modTitleEl.innerHTML = idArr[j].title;
-  modDescriptionEl.innerHTML = "Year: " + idArr[j].year + "<br/>Format: " + idArr[j].type;
+  modDescriptionEl.innerHTML =
+    "Year: " + idArr[j].year + "<br/>Format: " + idArr[j].type;
 });
 
 // Display movie info on modal
@@ -181,7 +162,8 @@ function displayPoster() {
     modPosterEl.src = idArr[j].poster;
   }
   modTitleEl.innerHTML = idArr[j].title;
-  modDescriptionEl.innerHTML = "Year: " + idArr[j].year + "<br/>Format: " + idArr[j].type;
+  modDescriptionEl.innerHTML =
+    "Year: " + idArr[j].year + "<br/>Format: " + idArr[j].type;
 }
 
 searchFormEl.addEventListener("submit", function (event) {
@@ -213,28 +195,28 @@ function showModal() {
   modalEl.classList.add("is-active");
 }
 // close modal
-function closeModal(event){
-  modalEl.classList.remove('is-active');
+function closeModal(event) {
+  modalEl.classList.remove("is-active");
 }
 modalCloseBtnEl.addEventListener("click", closeModal);
 modalBackgroundEl.addEventListener("click", closeModal);
 
 // TODO load detailed data to info-page
 // testing
-modPosterEl.addEventListener('click', function (event) {
+modPosterEl.addEventListener("click", function (event) {
   event.preventDefault();
   var selectedMovie = event.target;
   // get imdbID of the currently displayed movie (maybe a 'more info' button that has a value of the id)
   var title = modTitleEl.innerHTML; // test value
-  var date = idArr[j].year;// year movie released
+  var date = idArr[j].year; // year movie released
 
   closeModal();
   displayDetailedInfoPage(title, date);
-})
+});
 // call this function when the user clicks on a specific movie in the modal
 function displayDetailedInfoPage(title, year) {
   // go to info_page
-  window.location.assign('./info-page.html?q=' + title + '&y=' + year);
+  window.location.assign("./info-page.html?q=" + title + "&y=" + year);
 }
 
 // TODO pull from localstorage the cards that display on the home page
