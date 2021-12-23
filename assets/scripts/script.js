@@ -77,9 +77,6 @@ function getSearchInput() {
   getOmdbApi(titleVal, yearVal);
 }
 
-// searchFormEl.addEventListener("submit", getSearchInput);
-
-
 // Getting top ten most recent/future search results
 function getSearchResults(data, title, year) {
   if (data.Response == "False") {
@@ -121,7 +118,7 @@ function iteratePage(title, year) {
 
 searchFormEl.addEventListener("submit", function (event) {
   event.preventDefault();
-  console.log("We are here");
+  showModal();
   getSearchInput();
   if (idArr.length > 0) {
     console.log(idArr);
@@ -140,11 +137,9 @@ setInterval(dateTime, 1000);
 
 // Modal display
 // show modal
-function showModal(event){
-  event.preventDefault();
+function showModal(){
   modalEl.classList.add('is-active');
 }
-searchButtonEl.addEventListener('click', showModal);
 // close modal
 function closeModal(event){
   event.preventDefault();
