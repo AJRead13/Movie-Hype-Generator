@@ -67,6 +67,7 @@ html{
     color:var(--box-color);
     font-size: 3rem;
     transition: 1s linear;
+    -webkit-animation: colorchange 10s infinite;
 }
 .reel:hover  {
     color: var(--text-color);
@@ -166,3 +167,18 @@ html{
     background-color: var(--box-color);
 }
 
+/* keyframes */
+@-webkit-keyframes colorchange  {
+    0%  {
+        color:var(--box-color)
+    }
+    25% {
+        color:var(--text-color)
+    }
+    75% {
+        color:var(--hover-color)
+    }
+    100%    {
+        color:var(--box-color)
+    }
+}

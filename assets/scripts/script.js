@@ -202,6 +202,15 @@ var dateTime = function () {
 };
 setInterval(dateTime, 1000);
 
+var releaseDay = "";
+var releaseCount = document.querySelector(".card-content");
+var timeToRelease = function () {
+  var timeLeft = moment.to(releaseDay)
+  releaseCount.innerHTML(timeLeft);
+};
+setInterval(timeToRelease);
+// dd mm yyyy
+
 // Modal display
 // show modal
 function showModal() {
