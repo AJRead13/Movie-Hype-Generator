@@ -10,18 +10,18 @@ var movieData = {};
 displayInfo();
 // generate data and put into info-page
 function displayInfo() {
-    // get info from query in url
-    var queryString = document.location.search;
-    var title = queryString.split('=')[1].trim();
-    var year = queryString.split('=')[2].trim();
+  // get info from query in url
+  var queryString = document.location.search;
+  var title = queryString.split("=")[1].trim();
+  var year = queryString.split("=")[2].trim();
 
-    // generate url
-    var apiURL =
+  // generate url
+  var apiURL =
     "https://www.omdbapi.com/?i=tt3896198&apikey=" +
     APIKey +
     "&t=" +
     title +
-    "&y=" + 
+    "&y=" +
     year +
     "&plot=full";
 
@@ -45,12 +45,11 @@ function displayInfo() {
                 plotEl.innerHTML = "Plot: " + data.Plot;
                 writersEl.innerHTML = "Writers: " + data.Writer;
 
+                getComicApi(title.split("&y")[0]);
                 // Save info to localstorage
                 createDataObject(data);
             }
           });
-    // TODO related content (fetching from 2nd AIP)
-    // Marvel database search
 }
 
 // Save title, release date, poster image, and plot to localstorage
@@ -104,4 +103,46 @@ function saveToStorage() {
   }
   storedMovieArr = JSON.stringify(storedMovieArr);
   localStorage.setItem('movieData', storedMovieArr);
+}
+
+// related content (fetching from 2nd AIP)
+
+var comicApiPublicKey = "b6086cc7ddad64bdcdc0d9681c40e48d";
+var comicApiPrivateKey = "171a555d8009414cf5e463747ef4a609ff79e0bd";
+var ts = new Date();
+var hashMD5 = CryptoJS.MD5(
+  ts + comicApiPrivateKey + comicApiPublicKey
+).toString();
+
+// Marvel database search
+function getComicApi(title) {
+  var character = title.split(":")[0];
+  var comicApiURL =
+  "https://gateway.marvel.com:443/v1/public/comics?" +
+  "ts=" +
+  ts +
+  "&titleStartsWith=" +
+  character +
+  "&format=comic&formatType=comic&noVariants=false&orderBy=title&limit=15&apikey=" +
+  comicApiPublicKey +
+  "&hash=" +
+  hashMD5;
+  fetch(comicApiURL)
+    .then(function (response) {
+      if (!response.ok) {
+      }
+      return response.json();
+    })
+    .then(function (data) {
+      // console.log(data.data.results);
+      displaySimilarResults(data.data.results);
+    });
+}
+
+function displaySimilarResults(comicResults){
+
+  var comic = document.createElement("p");
+
+
+
 }
