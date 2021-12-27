@@ -8,7 +8,7 @@ var saveBtnEl = document.getElementById('save-btn');
 var movieData = {};
 
 displayInfo();
-// TODO generate data and put into info-page
+// generate data and put into info-page
 function displayInfo() {
     // get info from query in url
     var queryString = document.location.search;
@@ -45,7 +45,7 @@ function displayInfo() {
                 plotEl.innerHTML = "Plot: " + data.Plot;
                 writersEl.innerHTML = "Writers: " + data.Writer;
 
-                // TODO Save info to localstorage
+                // Save info to localstorage
                 createDataObject(data);
             }
           });
@@ -72,27 +72,36 @@ function createDataObject(data) {
 // listen for "save" button click
 saveBtnEl.addEventListener('click', function (event) {
   event.preventDefault();
-  console.log(movieData);
   // Save currently displayed movie to storage
   saveToStorage();
 })
 
 function saveToStorage() {
   // get current array of saved movies
-  // var storedMovieArr = localStorage.getItem('movieData');
-  // var fullMovieArr = [];
-  // if (storedMovieArr) {
-  //   storedMovieArr = JSON.parse(storedMovieArr);
-  //   // for each object in the array, parse it and add it back to the array
-  //   for (var i = 0; i < storedMovieArr.length; i++) {
-  //     fullMovieArr.push(JSON.parse(storedMovieArr[i]));
-  //   }
-  //   console.log(fullMovieArr);
-  // }
-  
-  // stringify moviData object
-  var stringMovieData = JSON.stringify(movieData);
-  // fullMovieArr.push(stringMovieData);
-
-  localStorage.setItem('movieData', stringMovieData);
+  var storedMovieArr = localStorage.getItem('movieData');
+  if (storedMovieArr) {
+    storedMovieArr = JSON.parse(storedMovieArr);
+    // for each object in the array, parse it and add it back to the array
+    for (var i = 0; i < storedMovieArr.length; i++) {
+      storedMovieArr[i] = JSON.parse(storedMovieArr[i]);
+    }
+  } else {
+    storedMovieArr = [];
+  }
+  // add current movie to list
+  // check if movie is already on list
+  for (var i = 0; i < storedMovieArr.length; i++) {
+    if (storedMovieArr[i].imdbID === movieData.imdbID) {
+      // if imdbID is already in the list return 
+      return;
+    }
+  }
+  // imdbID of the data is not in saved list already
+  storedMovieArr.push(movieData);
+  // re-stringify storedMoiveArr
+  for (var i = 0; i <storedMovieArr.length; i++) {
+    storedMovieArr[i] = JSON.stringify(storedMovieArr[i]);
+  }
+  storedMovieArr = JSON.stringify(storedMovieArr);
+  localStorage.setItem('movieData', storedMovieArr);
 }
