@@ -4,6 +4,8 @@ var timeEl = document.getElementById('release-time');
 var writersEl = document.getElementById('writers');
 var plotEl = document.getElementById('plot');
 var similarEl = document.getElementById('similar-results');
+var saveBtnEl = document.getElementById('save-btn');
+var movieData = {};
 
 displayInfo();
 // TODO generate data and put into info-page
@@ -34,7 +36,7 @@ function displayInfo() {
           })
           .then(function (data) {
             if (data.Response == "True") {
-                // TODO display data in relevant fields
+                // display data in relevant fields
                 // Title
                 titleEl.innerHTML = data.Title;
                 // time until release //TODO calculate
@@ -42,8 +44,55 @@ function displayInfo() {
                 // plot and description information
                 plotEl.innerHTML = "Plot: " + data.Plot;
                 writersEl.innerHTML = "Writers: " + data.Writer;
+
+                // TODO Save info to localstorage
+                createDataObject(data);
             }
           });
     // TODO related content (fetching from 2nd AIP)
     // Marvel database search
+}
+
+// Save title, release date, poster image, and plot to localstorage
+function createDataObject(data) {
+  var movieTitle = data.Title;
+  var movieID = data.imdbID;
+  var movieDate = data.Released;
+  var movieImage = data.Poster;
+  var moviePlot = data.Plot;
+  movieData = {
+    title: movieTitle,
+    imdbID: movieID,
+    date: movieDate,
+    image: movieImage,
+    plot: moviePlot
+  };
+}
+
+// listen for "save" button click
+saveBtnEl.addEventListener('click', function (event) {
+  event.preventDefault();
+  console.log(movieData);
+  // Save currently displayed movie to storage
+  saveToStorage();
+})
+
+function saveToStorage() {
+  // get current array of saved movies
+  // var storedMovieArr = localStorage.getItem('movieData');
+  // var fullMovieArr = [];
+  // if (storedMovieArr) {
+  //   storedMovieArr = JSON.parse(storedMovieArr);
+  //   // for each object in the array, parse it and add it back to the array
+  //   for (var i = 0; i < storedMovieArr.length; i++) {
+  //     fullMovieArr.push(JSON.parse(storedMovieArr[i]));
+  //   }
+  //   console.log(fullMovieArr);
+  // }
+  
+  // stringify moviData object
+  var stringMovieData = JSON.stringify(movieData);
+  // fullMovieArr.push(stringMovieData);
+
+  localStorage.setItem('movieData', stringMovieData);
 }
