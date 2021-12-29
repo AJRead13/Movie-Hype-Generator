@@ -98,6 +98,15 @@ html{
     border: 5px ridge var(--body-color);
     border-radius: 15px;
 }
+#modal-image:hover  {
+    cursor:pointer;
+}
+#cycle-left:hover   {
+    cursor:pointer;
+}
+#cycle-right:hover  {
+    cursor:pointer;
+}
 
 /* info-page */
 #infoBody   {
