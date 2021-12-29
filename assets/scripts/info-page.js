@@ -134,15 +134,40 @@ function getComicApi(title) {
       return response.json();
     })
     .then(function (data) {
-      // console.log(data.data.results);
       displaySimilarResults(data.data.results);
     });
 }
 
+// this function displays the comic cover photo and title
 function displaySimilarResults(comicResults){
-
   var comic = document.createElement("p");
+  for(let t=0; t<comicResults.length; t++){
+    var comicEl = document.createElement("p");
+    var comicPoster = document.createElement("img");
+    comicPoster.src = comicResults[t].thumbnail.path + "." +comicResults[t].thumbnail.extension;
+    comicPoster.onclick = function(){
+      window.location.href = comicResults[t].urls[0].url;
+    }
+    comicPoster.style.maxHeight = "100%";
+    comicPoster.style.maxWidth = "auto";
+    comicPoster.style.height = "100%";
+    comicPoster.style.width = "auto";
+    comicEl.appendChild(comicPoster);
+    var comicTitle = document.createElement("a");
+    comicTitle.href = comicResults[t].urls[0].url;
+    comicTitle.innerHTML = comicResults[t].title;
+    comicEl.appendChild(comicTitle);
+    comicEl.style.display = "flex";
+    comicEl.style.flexDirection = "column";
+    comicEl.style.flexBasis = "30%";
+    comic.appendChild(comicEl)
 
-
-
+  }
+  comic.style.display = "flex";
+  comic.style.flexDirection = "row";
+  comic.style.width = "100%";
+  comic.style.flexWrap = "wrap";
+  comic.style.columnGap = "5%";
+  similarEl.appendChild(comic);
+  
 }
