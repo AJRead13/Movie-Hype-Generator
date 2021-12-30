@@ -133,6 +133,19 @@ html{
     cursor: pointer;
     box-shadow: 3px 3px 5px var(--text-color);
 }
+#save-btn   {
+    background-color: var(--box-color);
+    color: var(--hover-color);
+    border-style: solid;
+    border-color: var(--hover-color);
+    font: var(--marvel);
+    font-weight: bold;
+    border-width: 3px;
+    transition: 1s linear;
+}
+#save-btn:hover{
+    box-shadow: 3px 3px 5px var(--text-color);
+}
 .title  {
     color: var(--text-color);
 }
