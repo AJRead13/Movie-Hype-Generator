@@ -2,7 +2,6 @@ var APIKey = "a2a12eb8";
 // Creating selectors to capture search input
 var searchFormEl = document.getElementById("search-form");
 var searchInputEl = document.getElementById("search-input");
-
 var yearInputEl = document.getElementById("year-input");
 var p = 1;
 var idArr = [];
@@ -17,7 +16,6 @@ var modTitleEl = document.getElementById("modal-title");
 var modDescriptionEl = document.getElementById("modal-description");
 var nextBtn = document.getElementById("cycle-right");
 var lastBtn = document.getElementById("cycle-left");
-
 // Fetching from the OMDB Api
 function getOmdbApi(title, year) {
   var apiURL =
@@ -219,4 +217,23 @@ function displayDetailedInfoPage(title, year) {
   window.location.assign("./info-page.html?q=" + title + "&y=" + year);
 }
 
-// TODO pull from localstorage the cards that display on the home page
+// pull from localstorage the cards that display on the home page
+function displaySavedMovies() {
+  var savedMovies = localStorage.getItem("movieData");
+  var movieArr = [];
+  if (savedMovies) {
+    savedMovies = JSON.parse(savedMovies);
+  }else{
+    savedMovies = [];
+  }
+  for (let i = 0; i < savedMovies.length; i++) {
+    movieArr.push(JSON.parse(savedMovies[i]));
+  }
+  for(let t=0; t<movieArr.length; t++){
+    document.getElementById("title-"+t).innerHTML = movieArr[t].title;
+    document.getElementById("img-"+t).src = movieArr[t].image;
+    document.getElementById("desc-"+t).innerHTML = movieArr[t].plot;
+  }
+  
+}
+displaySavedMovies();
