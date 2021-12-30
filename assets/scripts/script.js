@@ -216,24 +216,31 @@ function displayDetailedInfoPage(title, year) {
   // go to info_page
   window.location.assign("./info-page.html?q=" + title + "&y=" + year);
 }
-
 // pull from localstorage the cards that display on the home page
 function displaySavedMovies() {
+  // getting json string from local storage
   var savedMovies = localStorage.getItem("movieData");
   var movieArr = [];
+  // default visibility of cards is hidden until it is filled out with saved movie info
+  for(let q=0; q<10; q++){
+    document.getElementById("card-"+q).style.visibility = "hidden";
+  }
+  // checking if local storage has data
   if (savedMovies) {
     savedMovies = JSON.parse(savedMovies);
   }else{
     savedMovies = [];
   }
+  // parsing json string into object of arrays
   for (let i = 0; i < savedMovies.length; i++) {
     movieArr.push(JSON.parse(savedMovies[i]));
   }
+  // inserting saved movie info into card elements
   for(let t=0; t<movieArr.length; t++){
-    document.getElementById("title-"+t).innerHTML = movieArr[t].title;
+    document.getElementById("title-"+t).innerHTML = movieArr[t].title + "</br>" + "Release Date: " + movieArr[t].date;
     document.getElementById("img-"+t).src = movieArr[t].image;
     document.getElementById("desc-"+t).innerHTML = movieArr[t].plot;
-  }
-  
+    document.getElementById("card-"+t).style.visibility = "visible";
+  } 
 }
 displaySavedMovies();
