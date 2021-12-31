@@ -177,6 +177,7 @@ var dateTime = function () {
 };
 setInterval(dateTime, 1000);
 
+// console.log(moment().to(moment("27 Jul 2021")));
 // var releaseDay = "";
 // var releaseCount = document.querySelector(".card-content");
 // var timeToRelease = function () {
@@ -240,9 +241,13 @@ function displaySavedMovies() {
   }
   // inserting saved movie info into card elements
   for(let t=0; t<movieArr.length; t++){
-    document.getElementById("title-"+t).innerHTML = movieArr[t].title + "</br>" + "Release Date: " + movieArr[t].date;
+    // displaying title, release date and countdown
+    document.getElementById("title-"+t).innerHTML = movieArr[t].title + "</br>" + "Release Date: " + movieArr[t].date + "</br>" + "Countdown: " + moment().to(moment(movieArr[t].date, "DD-MMM-YYYY"));
+    // displays poster
     document.getElementById("img-"+t).src = movieArr[t].image;
+    // displays description
     document.getElementById("desc-"+t).innerHTML = movieArr[t].plot;
+    // only shows cards with data
     document.getElementById("card-"+t).style.visibility = "visible";
     // displays info page when movie card is clicked
     document.getElementById("card-"+t).addEventListener("click", function(event){
@@ -250,6 +255,7 @@ function displaySavedMovies() {
       console.log(movieArr[t].date.split(" ")[2]);
       displayDetailedInfoPage(movieArr[t].title, movieArr[t].date.split(" ")[2]);
     })
+
   } 
 }
 displaySavedMovies();
