@@ -180,10 +180,10 @@ setInterval(dateTime, 1000);
 // var releaseDay = "";
 // var releaseCount = document.querySelector(".card-content");
 // var timeToRelease = function () {
-//   var timeLeft = moment.to(releaseDay)
+//   var timeLeft = moment.to(releaseDay).format()
 //   releaseCount.innerHTML(timeLeft);
 // };
-// setInterval(timeToRelease);
+// setInterval(timeToRelease);60000
 // dd mm yyyy
 
 // Modal display
@@ -193,7 +193,6 @@ function showModal() {
 }
 // close modal
 function closeModal(event) {
-  event.preventDefault();
   modalEl.classList.remove("is-active");
   // clearing search input and idArr
   searchInputEl.value = "";
