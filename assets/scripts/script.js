@@ -16,6 +16,7 @@ var modTitleEl = document.getElementById("modal-title");
 var modDescriptionEl = document.getElementById("modal-description");
 var nextBtn = document.getElementById("cycle-right");
 var lastBtn = document.getElementById("cycle-left");
+
 // Fetching from the OMDB Api
 function getOmdbApi(title, year) {
   var apiURL =
@@ -244,6 +245,14 @@ function displaySavedMovies() {
     document.getElementById("img-"+t).src = movieArr[t].image;
     document.getElementById("desc-"+t).innerHTML = movieArr[t].plot;
     document.getElementById("card-"+t).style.visibility = "visible";
+    // displays info page when movie card is clicked
+    document.getElementById("card-"+t).addEventListener("click", function(event){
+      event.preventDefault();
+      console.log(movieArr[t].date.split(" ")[2]);
+      displayDetailedInfoPage(movieArr[t].title, movieArr[t].date.split(" ")[2]);
+    })
   } 
 }
 displaySavedMovies();
+
+
