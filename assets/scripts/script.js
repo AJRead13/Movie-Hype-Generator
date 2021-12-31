@@ -28,18 +28,15 @@ function getOmdbApi(title, year) {
     "&page=" +
     p +
     "&plot=full";
-
   fetch(apiURL)
     .then(function (response) {
       if (!response.ok) {
         return;
       }
-      // console.log(response);
       return response.json();
     })
     .then(function (data) {
       if (data.Response == "True") {
-        // console.log(data);
         getSearchResults(data, title, year);
       }
     });
@@ -152,6 +149,7 @@ lastBtn.addEventListener("click", function (event) {
 
 // Display movie info on modal
 function displayPoster() {
+  j=0;
   modPosterEl.style.maxHeight = "100%";
   modPosterEl.style.maxWidth = "auto";
   if (idArr[j].poster == "N/A") {
@@ -194,7 +192,12 @@ function showModal() {
 }
 // close modal
 function closeModal(event) {
+  event.preventDefault();
   modalEl.classList.remove("is-active");
+  // clearing search input and idArr
+  searchInputEl.value = "";
+  yearInputEl.value = "";
+  idArr = [];
 }
 modalCloseBtnEl.addEventListener("click", closeModal);
 modalBackgroundEl.addEventListener("click", closeModal);
