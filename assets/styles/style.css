@@ -146,6 +146,14 @@ html{
 #save-btn:hover{
     box-shadow: 3px 3px 5px var(--text-color);
 }
+a {
+    color: var(--box-color);
+    font-family: var(--marvel);
+
+}
+img:hover{
+    cursor: pointer;
+}
 .title  {
     color: var(--text-color);
 }
