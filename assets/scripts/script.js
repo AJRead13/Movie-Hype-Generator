@@ -193,7 +193,6 @@ function showModal() {
 }
 // close modal
 function closeModal(event) {
-  event.preventDefault();
   modalEl.classList.remove("is-active");
   // clearing search input and idArr
   searchInputEl.value = "";
