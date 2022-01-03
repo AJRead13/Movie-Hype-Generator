@@ -42,7 +42,6 @@ html{
     border-color: var(--body-color);
     color: var(--text-color);
     transition: 1s linear;
-    /* box-shadow: 0px 0px 10px rgb(103, 199, 235); */
 } 
 /* SearchBar and header Styling */
 #searchBar  {
@@ -87,7 +86,6 @@ html{
 }
 .movie:hover {
     box-shadow: 3px 3px 5px var(--text-color);
-    /* box-shadow: -5px -5px 10px rgb(103, 199, 235); */
     cursor: pointer;
 } 
 
@@ -121,7 +119,6 @@ html{
     color: var(--hover-color);
     font-weight: 700;
     font-size: 1.2rem;
-    /* padding-right: 5px; */
     text-align: center;
     font-family: var(--marvel);
     border-color: black;
@@ -173,17 +170,14 @@ img:hover{
 .tvIcon  {
     color:var(--box-color);
     font-size: 2rem;
-    /* <i class="fas fa-tv"></i> */
 }
 .movieIcon  {
     color:var(--box-color);
     font-size: 2rem;
-    /* <i class="fas fa-ticket-alt"></i> */
 }
 .comicIcon  {
     color:var(--box-color);
     font-size: 2rem;
-    /* <i class="fas fa-book-open"></i> */
 }
 /* Modal */
 #modal-title    {

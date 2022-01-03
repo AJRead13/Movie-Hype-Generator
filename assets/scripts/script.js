@@ -177,16 +177,6 @@ var dateTime = function () {
 };
 setInterval(dateTime, 1000);
 
-// console.log(moment().to(moment("27 Jul 2021")));
-// var releaseDay = "";
-// var releaseCount = document.querySelector(".card-content");
-// var timeToRelease = function () {
-//   var timeLeft = moment.to(releaseDay).format()
-//   releaseCount.innerHTML(timeLeft);
-// };
-// setInterval(timeToRelease);60000
-// dd mm yyyy
-
 // Modal display
 // show modal
 function showModal() {
@@ -203,11 +193,9 @@ function closeModal(event) {
 modalCloseBtnEl.addEventListener("click", closeModal);
 modalBackgroundEl.addEventListener("click", closeModal);
 
-// TODO load detailed data to info-page
-// testing
+// load detailed data to info-page
 modPosterEl.addEventListener("click", function (event) {
   event.preventDefault();
-  var selectedMovie = event.target;
   // get imdbID of the currently displayed movie (maybe a 'more info' button that has a value of the id)
   var title = modTitleEl.innerHTML; // test value
   var date = idArr[j].year; // year movie released
@@ -252,7 +240,6 @@ function displaySavedMovies() {
     // displays info page when movie card is clicked
     document.getElementById("card-"+t).addEventListener("click", function(event){
       event.preventDefault();
-      console.log(movieArr[t].date.split(" ")[2]);
       displayDetailedInfoPage(movieArr[t].title, movieArr[t].date.split(" ")[2]);
     })
 

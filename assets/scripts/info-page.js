@@ -31,7 +31,6 @@ function displayInfo() {
             if (!response.ok) {
               return;
             }
-            // console.log(response);
             return response.json();
           })
           .then(function (data) {
