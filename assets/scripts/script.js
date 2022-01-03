@@ -1,4 +1,4 @@
-var APIKey = "a2a12eb8";
+var APIKey = "a5e84bc6";
 // Creating selectors to capture search input
 var searchFormEl = document.getElementById("search-form");
 var searchInputEl = document.getElementById("search-input");
