@@ -15,9 +15,9 @@ No install required
 ## Usage
 Open in browser.  https://ajread13.github.io/Movie-Hype-Generator/
 ## Screenshot
-![screenshot start]() 
+![screenshot start](assets/images/savedMovies.png) 
 ![screenshot modal](assets/images/modalExample.png)
-![screenshot initials]()
+![screenshot infopage](assets/images/movieInfoPage.png)
 ![screenshot QR-Code](assets/images/QRcode.png)
 ## Credits
 Tina Stanczyk & Michael Hranek
